@@ -1,17 +1,23 @@
-const connectToMongo = require('./db');
-connectToMongo();
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
+import express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+import cors from 'cors';
 
 const app = express();
-const port = process.env.PORT || 5000;
+
 app.use(bodyParser.json({ limit: '30mb', extended: true }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
-//Midleware to express deal with json file
-app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`Socialbook-Backend listening at http://localhost:${port}`);
-});
+const CONNECTION_URL =
+  'mongodb+srv://nadim:nadimhasan@cluster0.ve7xx.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+const PORT = process.env.PORT || 5000;
+
+mongoose
+  .connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() =>
+    app.listen(PORT, () =>
+      console.log(`Server Running on Port: http://localhost:${PORT}`)
+    )
+  )
+  .catch((error) => console.log(`${error} did not connect`));

@@ -3,8 +3,10 @@ import { Feed, Navbar, RightSidebar, SideBar } from './components';
 import { makeStyles, Box, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
-  container: {
-    marginTop: theme.spacing(10),
+  right: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
 }));
 const App = () => {
@@ -12,19 +14,17 @@ const App = () => {
   return (
     <Box>
       <Navbar />
-      <div className={classes.container}>
-        <Grid container>
-          <Grid item sm={3}>
-            <SideBar />
-          </Grid>
-          <Grid item sm={6}>
-            <Feed />
-          </Grid>
-          <Grid item sm={3}>
-            <RightSidebar />
-          </Grid>
+      <Grid container>
+        <Grid item sm={2} xs={2}>
+          <SideBar />
         </Grid>
-      </div>
+        <Grid item sm={7} xs={10}>
+          <Feed />
+        </Grid>
+        <Grid item sm={3} className={classes.right}>
+          <RightSidebar />
+        </Grid>
+      </Grid>
     </Box>
   );
 };

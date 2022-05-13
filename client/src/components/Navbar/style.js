@@ -42,11 +42,11 @@ const useStyles = makeStyles((theme) => ({
   },
   icons: {
     alignItems: 'center',
-    cursor: 'pointer',
     display: (props) => (props.open ? 'none' : 'flex'),
   },
   searchButton: {
     marginRight: theme.spacing(1),
+    cursor: 'Pointer',
     display: 'none',
     [theme.breakpoints.down('sm')]: {
       display: 'block',

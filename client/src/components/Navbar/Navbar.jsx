@@ -28,10 +28,20 @@ const Navbar = () => {
           <InputBase placeholder="Search…" className={classes.input} />
         </div>
         <div className={classes.icons}>
-          <Badge badgeContent={4} color="secondary" className={classes.badge}>
+          <Badge
+            badgeContent={4}
+            color="secondary"
+            className={classes.badge}
+            overlap="rectangular"
+          >
             <Mail />
           </Badge>
-          <Badge badgeContent={4} color="secondary" className={classes.badge}>
+          <Badge
+            badgeContent={4}
+            color="secondary"
+            className={classes.badge}
+            overlap="rectangular"
+          >
             <Notifications />
           </Badge>
           <Avatar

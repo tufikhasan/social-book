@@ -1,6 +1,7 @@
 import React from 'react';
 import { Feed, Navbar, RightSidebar, SideBar } from './components';
 import { makeStyles, Grid } from '@material-ui/core';
+import Add from './components/Add';
 
 const useStyles = makeStyles((theme) => ({
   right: {
@@ -26,6 +27,7 @@ const App = () => {
           <RightSidebar />
         </Grid>
       </Grid>
+      <Add />
     </div>
   );
 };

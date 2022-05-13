@@ -1,20 +1,7 @@
 import React from 'react';
-import { makeStyles, AppBar, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, Typography } from '@material-ui/core';
+import useStyles from './style';
 
-const useStyles = makeStyles((theme) => ({
-  logoLg: {
-    display: 'none',
-    [theme.breakpoints.up('sm')]: {
-      display: 'block',
-    },
-  },
-  logoSm: {
-    display: 'block',
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
-  },
-}));
 const Navbar = () => {
   const classes = useStyles();
   return (

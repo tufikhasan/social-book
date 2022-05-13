@@ -4,14 +4,14 @@ import { makeStyles, AppBar, Toolbar, Typography } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   logoLg: {
     display: 'none',
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
   },
   logoSm: {
-    display: 'none',
-    [theme.breakpoints.down('md')]: {
-      display: 'block',
+    display: 'block',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
     },
   },
 }));

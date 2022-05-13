@@ -8,7 +8,8 @@ import {
   Badge,
   Avatar,
 } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
+import Search from '@material-ui/icons/Search';
+import Cancel from '@material-ui/icons/Cancel';
 import Mail from '@material-ui/icons/Mail';
 import Notifications from '@material-ui/icons/Notifications';
 
@@ -25,11 +26,12 @@ const Navbar = () => {
           SBook
         </Typography>
         <div className={classes.search}>
-          <SearchIcon />
+          <Search />
           <InputBase placeholder="Search…" className={classes.input} />
+          <Cancel className={classes.cancel} onClick={() => setOpen(false)} />
         </div>
         <div className={classes.icons}>
-          <SearchIcon
+          <Search
             className={classes.searchButton}
             onClick={() => setOpen(true)}
           />

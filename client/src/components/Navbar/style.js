@@ -26,16 +26,15 @@ const useStyles = makeStyles((theme) => ({
     '&:hover': {
       backgroundColor: alpha(theme.palette.common.white, 0.25),
     },
-    marginRight: theme.spacing(1),
     marginLeft: 0,
-    width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: theme.spacing(1),
-      width: 'auto',
+      margin: theme.spacing(1),
+      width: '50%',
     },
     paddingLeft: theme.spacing(1),
     [theme.breakpoints.down('sm')]: {
       display: (props) => (props.open ? 'flex' : 'none'),
+      width: 'auto',
     },
   },
   input: {
@@ -55,6 +54,12 @@ const useStyles = makeStyles((theme) => ({
   },
   badge: {
     marginRight: theme.spacing(1),
+  },
+  cancel: {
+    cursor: 'pointer',
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
   },
 }));
 

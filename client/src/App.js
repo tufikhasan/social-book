@@ -1,14 +1,24 @@
 import React from 'react';
 import { Feed, Navbar, RightSidebar, SideBar } from './components';
-import { Box } from '@material-ui/core';
+import { Box, Grid } from '@material-ui/core';
 
 const App = () => {
   return (
     <Box>
       <Navbar />
-      <SideBar />
-      <Feed />
-      <RightSidebar />
+      <div style={{ paddingTop: 60 }}>
+        <Grid container>
+          <Grid item sm={3}>
+            <SideBar />
+          </Grid>
+          <Grid item sm={6}>
+            <Feed />
+          </Grid>
+          <Grid item sm={3}>
+            <RightSidebar />
+          </Grid>
+        </Grid>
+      </div>
     </Box>
   );
 };

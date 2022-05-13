@@ -34,13 +34,27 @@ const useStyles = makeStyles((theme) => ({
       width: 'auto',
     },
     paddingLeft: theme.spacing(1),
+    [theme.breakpoints.down('sm')]: {
+      display: (props) => (props.open ? 'flex' : 'none'),
+    },
   },
   input: {
     color: 'white',
   },
   icons: {
-    display: 'flex',
     alignItems: 'center',
+    cursor: 'pointer',
+    display: (props) => (props.open ? 'none' : 'flex'),
+  },
+  searchButton: {
+    marginRight: theme.spacing(1),
+    display: 'none',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+    },
+  },
+  badge: {
+    marginRight: theme.spacing(1),
   },
 }));
 

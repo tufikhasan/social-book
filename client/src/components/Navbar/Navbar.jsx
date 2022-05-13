@@ -1,19 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import useStyles from './style';
 import {
   AppBar,
   Toolbar,
   Typography,
   InputBase,
+  Badge,
   Avatar,
 } from '@material-ui/core';
-import Badge from '@material-ui/core/Badge';
 import SearchIcon from '@material-ui/icons/Search';
 import Mail from '@material-ui/icons/Mail';
 import Notifications from '@material-ui/icons/Notifications';
 
 const Navbar = () => {
-  const classes = useStyles();
+  const [open, setOpen] = useState(false);
+  const classes = useStyles({ open });
   return (
     <AppBar>
       <Toolbar className={classes.toolbar}>
@@ -28,6 +29,10 @@ const Navbar = () => {
           <InputBase placeholder="Search…" className={classes.input} />
         </div>
         <div className={classes.icons}>
+          <SearchIcon
+            className={classes.searchButton}
+            onClick={() => setOpen(true)}
+          />
           <Badge
             badgeContent={4}
             color="secondary"

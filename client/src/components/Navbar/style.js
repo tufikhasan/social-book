@@ -57,8 +57,9 @@ const useStyles = makeStyles((theme) => ({
   },
   cancel: {
     cursor: 'pointer',
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
+    display: 'none',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
     },
   },
 }));

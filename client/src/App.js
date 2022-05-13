@@ -6,19 +6,17 @@ const App = () => {
   return (
     <Box>
       <Navbar />
-      <div style={{ paddingTop: 60 }}>
-        <Grid container>
-          <Grid item sm={3}>
-            <SideBar />
-          </Grid>
-          <Grid item sm={6}>
-            <Feed />
-          </Grid>
-          <Grid item sm={3}>
-            <RightSidebar />
-          </Grid>
+      <Grid container>
+        <Grid item sm={3}>
+          <SideBar />
         </Grid>
-      </div>
+        <Grid item sm={6}>
+          <Feed />
+        </Grid>
+        <Grid item sm={3}>
+          <RightSidebar />
+        </Grid>
+      </Grid>
     </Box>
   );
 };

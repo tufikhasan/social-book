@@ -8,28 +8,16 @@ const SideBar = () => {
   return (
     <Container>
       <div className={classes.item}>
-        <Home />
-        <Typography variant="h6">Home</Typography>
+        <Home className={classes.icon} />
+        <Typography variant="h6" className={classes.text}>
+          Home
+        </Typography>
       </div>
       <div className={classes.item}>
-        <Home />
-        <Typography variant="h6">Home</Typography>
-      </div>
-      <div className={classes.item}>
-        <Home />
-        <Typography variant="h6">Home</Typography>
-      </div>
-      <div className={classes.item}>
-        <Home />
-        <Typography variant="h6">Home</Typography>
-      </div>
-      <div className={classes.item}>
-        <Home />
-        <Typography variant="h6">Home</Typography>
-      </div>
-      <div className={classes.item}>
-        <Home />
-        <Typography variant="h6">Home</Typography>
+        <Home className={classes.icon} />
+        <Typography variant="h6" className={classes.text}>
+          Home
+        </Typography>
       </div>
     </Container>
   );

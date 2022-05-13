@@ -11,6 +11,8 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: theme.palette.primary.main,
       color: 'white',
     },
+    position: 'sticky',
+    top: 0,
   },
   item: {
     display: 'flex',

@@ -1,9 +1,10 @@
 import React from 'react';
 import { Feed, Navbar, RightSidebar, SideBar } from './components';
-import { makeStyles, Box, Grid } from '@material-ui/core';
+import { makeStyles, Grid } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   right: {
+    display: 'block',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
@@ -12,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
 const App = () => {
   const classes = useStyles();
   return (
-    <Box>
+    <div>
       <Navbar />
       <Grid container>
         <Grid item sm={2} xs={2}>
@@ -25,7 +26,7 @@ const App = () => {
           <RightSidebar />
         </Grid>
       </Grid>
-    </Box>
+    </div>
   );
 };
 

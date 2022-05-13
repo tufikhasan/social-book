@@ -1,7 +1,16 @@
 import React from 'react';
+import { Feed, Navbar, RightSidebar, SideBar } from './components';
+import { Box } from '@material-ui/core';
 
 const App = () => {
-  return <div>hello world</div>;
+  return (
+    <Box>
+      <Navbar />
+      <SideBar />
+      <Feed />
+      <RightSidebar />
+    </Box>
+  );
 };
 
 export default App;

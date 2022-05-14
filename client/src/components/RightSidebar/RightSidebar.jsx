@@ -72,12 +72,6 @@ const RightSidebar = () => {
         </ImageListItem>
         <ImageListItem>
           <img
-            src="https://v4.mui.com/static/images/image-list/honey.jpg"
-            alt="Title"
-          />
-        </ImageListItem>
-        <ImageListItem>
-          <img
             src="https://v4.mui.com/static/images/image-list/mushroom.jpg"
             alt="mushroom"
           />

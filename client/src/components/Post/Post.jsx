@@ -14,35 +14,26 @@ import MoreVertIcon from '@material-ui/icons/MoreVert';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 
-const Post = () => {
+const Post = (props) => {
+  const { authorImg, title, desc, img, date } = props;
   const classes = useStyles();
   return (
     <Card className={classes.post}>
       <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" className={classes.avatar}>
-            R
-          </Avatar>
-        }
+        avatar={<Avatar alt={title} src={authorImg} />}
         action={
           <IconButton aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={title}
+        subheader={date}
       />
       <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image="https://static.vecteezy.com/packs/media/components/global/search-explore-nav/img/vectors/term-bg-1-666de2d941529c25aa511dc18d727160.jpg"
-          title="Paella dish"
-        />
+        <CardMedia className={classes.media} image={img} title={title} />
         <CardContent>
           <Typography variant="body1" color="textSecondary" component="p">
-            This impressive paella is a perfect party dish and a fun meal to
-            cook together with your guests. Add 1 cup of frozen peas along with
-            the mussels, if you like.
+            {desc}
           </Typography>
         </CardContent>
       </CardActionArea>

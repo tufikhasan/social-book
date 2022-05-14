@@ -1,7 +1,15 @@
 import React, { useState } from 'react';
-import { Container, Fab, makeStyles, Modal, Tooltip } from '@material-ui/core';
+import {
+  Button,
+  Container,
+  Fab,
+  makeStyles,
+  Modal,
+  TextField,
+  Tooltip,
+  Typography,
+} from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
-import ClearIcon from '@material-ui/icons/Clear';
 
 const useStyles = makeStyles((theme) => ({
   positioning: {
@@ -24,8 +32,11 @@ const useStyles = makeStyles((theme) => ({
       height: '100vh',
     },
   },
-  clear: {
-    cursor: 'pointer',
+  form: {
+    padding: theme.spacing(2),
+  },
+  item: {
+    marginBottom: theme.spacing(3),
   },
 }));
 
@@ -41,8 +52,46 @@ const Add = () => {
       </Tooltip>
       <Modal open={open}>
         <Container className={classes.container}>
-          <ClearIcon onClick={() => setOpen(false)} className={classes.clear} />
-          My modal
+          <form className={classes.form} autoComplete="off">
+            <Typography variant="h4" color="secondary">
+              Create a new post
+            </Typography>
+            <div className={classes.item}>
+              <TextField label="Title" style={{ width: '100%' }} />
+            </div>
+            <div className={classes.item}>
+              <TextField
+                label="Description"
+                multiline
+                rows={4}
+                variant="outlined"
+                style={{ width: '100%' }}
+              />
+            </div>
+            <div className={classes.item}>
+              <TextField label="Tag" style={{ width: '100%' }} />
+            </div>
+            <div className={classes.item}>
+              <input accept="image/*" className={classes.input} type="file" />
+            </div>
+            <div className={classes.item}>
+              <Button
+                variant="outlined"
+                color="primary"
+                style={{ marginRight: '1rem' }}
+              >
+                Create
+              </Button>
+              <Button
+                variant="outlined"
+                color="secondary"
+                style={{ cursor: 'pointer' }}
+                onClick={() => setOpen(false)}
+              >
+                Cancel
+              </Button>
+            </div>
+          </form>
         </Container>
       </Modal>
     </>

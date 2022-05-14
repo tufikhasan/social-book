@@ -3,8 +3,9 @@ import { makeStyles, alpha } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   logoLg: {
     display: 'none',
+    alignItems: 'center',
     [theme.breakpoints.up('sm')]: {
-      display: 'block',
+      display: 'flex',
     },
   },
   logoSm: {

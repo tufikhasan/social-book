@@ -12,6 +12,7 @@ import Search from '@material-ui/icons/Search';
 import Cancel from '@material-ui/icons/Cancel';
 import Mail from '@material-ui/icons/Mail';
 import Notifications from '@material-ui/icons/Notifications';
+import LinkedCameraIcon from '@material-ui/icons/LinkedCamera';
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -20,10 +21,10 @@ const Navbar = () => {
     <AppBar position="fixed">
       <Toolbar className={classes.toolbar}>
         <Typography variant="h6" className={classes.logoLg}>
-          SocialBook
+          Memories <LinkedCameraIcon style={{ marginLeft: '10px' }} />
         </Typography>
         <Typography variant="h6" className={classes.logoSm}>
-          SBook
+          Memories
         </Typography>
         <div className={classes.search}>
           <Search />

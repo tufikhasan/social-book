@@ -5,11 +5,17 @@ import {
   Fab,
   makeStyles,
   Modal,
+  Snackbar,
   TextField,
   Tooltip,
   Typography,
 } from '@material-ui/core';
 import AddIcon from '@material-ui/icons/Add';
+import MuiAlert from '@material-ui/lab/Alert';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 const useStyles = makeStyles((theme) => ({
   positioning: {
@@ -43,6 +49,14 @@ const useStyles = makeStyles((theme) => ({
 const Add = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [openAlert, setOpenAlert] = useState(false);
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpenAlert(false);
+  };
   return (
     <>
       <Tooltip title="Add memories" aria-label="add">
@@ -79,6 +93,7 @@ const Add = () => {
                 variant="outlined"
                 color="primary"
                 style={{ marginRight: '1rem' }}
+                onClick={() => setOpenAlert(true)}
               >
                 Create
               </Button>
@@ -94,6 +109,16 @@ const Add = () => {
           </form>
         </Container>
       </Modal>
+      <Snackbar
+        open={openAlert}
+        autoHideDuration={4000}
+        onClose={handleClose}
+        anchorOrigin={{ vertical: 'top', horizontal: 'left' }}
+      >
+        <Alert onClose={handleClose} severity="success">
+          Post created successful!
+        </Alert>
+      </Snackbar>
     </>
   );
 };
